@@ -39,21 +39,21 @@ public class EstudanteEndpoint {
 
 	@GetMapping(path = "/estudantes/{id}")
 	@ApiOperation(value = "getEstudanteById", response = Estudante.class)
-	public ResponseEntity<?> getEstudanteById(@PathVariable Long id) {
+	public ResponseEntity<?> getEstudanteById(@PathVariable("id") Long id) {
 		verifyIfEstudanteExists(id);
 		return new ResponseEntity<>(dao.findOne(id), HttpStatus.OK);
 	}
 
 	@GetMapping(path = "/estudantes/nome/{nome}")
 	@ApiOperation(value = "findEstudanteByName", response = Estudante[].class)
-	public ResponseEntity<?> findEstudanteByName(@PathVariable String nome) {
+	public ResponseEntity<?> findEstudanteByName(@PathVariable("nome") String nome) {
 		return new ResponseEntity<>(dao.findByNomeIgnoreCaseContaining(nome), HttpStatus.OK);
 	}
 
 	@DeleteMapping(path = "/estudantes/{id}")
 	@Transactional(rollbackFor=Exception.class)
 	@ApiOperation(value = "Delete")
-	public ResponseEntity<?> delete(@PathVariable Long id) {
+	public ResponseEntity<?> delete(@PathVariable("id") Long id) {
 		verifyIfEstudanteExists(id);
 		dao.delete(id);
 		return new ResponseEntity<>(HttpStatus.OK);
