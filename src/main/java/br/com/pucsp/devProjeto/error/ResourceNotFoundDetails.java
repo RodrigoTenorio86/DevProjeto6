@@ -1,7 +1,5 @@
 package br.com.pucsp.devProjeto.error;
 
-import br.com.pucsp.devProjeto.error.ResourceNotFoundDetails.Builder;
-
 public class ResourceNotFoundDetails {
 	private String title;
 	private int status;
