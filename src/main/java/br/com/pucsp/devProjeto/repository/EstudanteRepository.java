@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
@@ -12,7 +13,7 @@ import org.springframework.stereotype.Repository;
 import br.com.pucsp.devProjeto.modelo.Estudante;
 
 //PagingAndSortingRepository   CrudRepository  JpaRepository
-public interface EstudanteRepository extends JpaRepository<Estudante, Long>{
+public interface EstudanteRepository extends PagingAndSortingRepository<Estudante, Long>{
 public List<Estudante> findByNome(String nome);
 public List<Estudante> findByNomeIgnoreCaseContaining(String nome);
 public List<Estudante> findByEmail(String email);
