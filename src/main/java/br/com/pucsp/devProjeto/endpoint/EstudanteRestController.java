@@ -73,6 +73,7 @@ public class EstudanteRestController {
 		dao.save(estudante);
 		return new ResponseEntity<>(HttpStatus.OK);
 	}
+	
 	private void verifyIfEstudanteExists(Long id) {
 		if (dao.findOne(id) == null)
 			throw new ResourceNotFoundException("Estudante Not Found for id " + id);
