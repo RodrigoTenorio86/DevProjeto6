@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org"
+      xmlns:layout="http://ultraq.net.nz/thymeleaf/layout" >
+<head>
+ <title>App</title>
+</head>
+<body>
+    <h1>Lista de Estudante</h1>
+    <h3><a href="/cadastrarEstudante">Cadastro Estudante</a></h3>
+    <div th:each="estudante:${estudantes}">
+       <div class="row">
+          <p><span th:text="${estudante.nome}"></span></p>
+          <p><span th:text="${estudante.email}"></span></p>
+       </div>
+    </div>
+</body>
+</html>
