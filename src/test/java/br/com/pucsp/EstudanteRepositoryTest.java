@@ -31,6 +31,11 @@ public class EstudanteRepositoryTest {
 	public void setup() {
 		this.estudante = new Estudante("Jose", "jse@com.br");
 	}
+	
+	public void createShouldPersistData() {
+		this.estudanteRepository.save(estudante);
+		assertThat(estudante.getId()).isNotNull();
+	}
 
 	@Test
 	public void deleteShoulRemoveData() {

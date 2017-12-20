@@ -20,9 +20,10 @@ import org.springframework.web.bind.annotation.RestController;
 import br.com.pucsp.devProjeto.error.ResourceNotFoundException;
 import br.com.pucsp.devProjeto.modelo.Estudante;
 import br.com.pucsp.devProjeto.repository.EstudanteRepository;
+import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import javassist.bytecode.ExceptionsAttribute;
-
+@Api(value="Api REST Estudante")
 @RestController
 @RequestMapping("v1")
 public class EstudanteRestController {
