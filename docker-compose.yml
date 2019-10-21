@@ -25,3 +25,4 @@ services:
       - mysql-standalone
 
 
+https://dimitr.im/docker-spring-boot
